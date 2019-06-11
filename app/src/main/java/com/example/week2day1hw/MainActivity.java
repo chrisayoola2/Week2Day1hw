@@ -57,16 +57,18 @@ public class MainActivity extends AppCompatActivity {
             case 100:
                 //    Intent intent = getIntent();
                 Bundle passedBundle = data.getExtras();  //gets the car object data from registration activity and saves it to pAssedbundle
-                //
-                Car car = passedBundle.getParcelable("car"); //saves passed bundle
+                if (passedBundle != null) {
+                    Car car = passedBundle.getParcelable("car"); //saves passed bundle
 
-                carColor = car.getColor();
-                carMake = car.getMake();
-                carModel = car.getModel();
-                carYear = car.getYear();
-                carEngine = car.getEngine();
-                carTrans = car.getTransType();
-
+                    if( car != null) {
+                        carColor = car.getColor();
+                        carMake = car.getMake();
+                        carModel = car.getModel();
+                        carYear = car.getYear();
+                        carEngine = car.getEngine();
+                        carTrans = car.getTransType();
+                    }
+                }
                 // tvDisplay.setText(carInfo);
         }
 
